@@ -1,0 +1,822 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "InvoiceRecord-example-01",
+  "meta" : {
+    "versionId" : "1",
+    "lastUpdated" : "2023-08-22T17:24:00.605+05:30",
+    "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentBundle"],
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+      "code" : "V",
+      "display" : "very restricted"
+    }]
+  },
+  "identifier" : {
+    "system" : "http://hip.in",
+    "value" : "3cf54fc4-0178-4127-bb99-b20711404881"
+  },
+  "type" : "document",
+  "timestamp" : "2023-08-22T17:31:00.605+05:30",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:a6c9451c-789c-41c2-bf10-433459b97b3a",
+    "resource" : {
+      "resourceType" : "Composition",
+      "id" : "a6c9451c-789c-41c2-bf10-433459b97b3a",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-22T17:24:00.605+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/InvoiceRecord"]
+      },
+      "language" : "en-IN",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-IN\" lang=\"en-IN\"><p><b>Generated Narrative: Composition</b><a name=\"a6c9451c-789c-41c2-bf10-433459b97b3a\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Composition &quot;a6c9451c-789c-41c2-bf10-433459b97b3a&quot; Version &quot;1&quot; Updated &quot;2023-08-22 17:24:00+0530&quot;  (Language &quot;en-IN&quot;) </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-InvoiceRecord.html\">InvoiceRecord</a></p></div><p><b>status</b>: final</p><p><b>type</b>: Invoice Record <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>date</b>: 2023-08-22 17:37:00+0530</p><p><b>author</b>: <a href=\"#Practitioner_27d743c1-5a4a-481f-b65c-83877d4fa7ce\">See above (urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce)</a></p><p><b>title</b>: Pharmacy Invoice Record</p></div>"
+      },
+      "status" : "final",
+      "type" : {
+        "text" : "Invoice Record"
+      },
+      "subject" : {
+        "reference" : "urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+        "display" : "Patient"
+      },
+      "date" : "2023-08-22T17:37:00.605+05:30",
+      "author" : [{
+        "reference" : "urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce"
+      }],
+      "title" : "Pharmacy Invoice Record",
+      "section" : [{
+        "title" : "Pharmacy Invoice Details",
+        "entry" : [{
+          "reference" : "urn:uuid:f54b86a4-5a1a-4d1d-af98-30ee474602bb",
+          "type" : "Invoice"
+        }]
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+    "resource" : {
+      "resourceType" : "Patient",
+      "id" : "7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2020-07-09T14:58:58.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-IN\" lang=\"en-IN\">ABC, 41 year, Male</div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MR",
+            "display" : "Medical record number"
+          }]
+        },
+        "system" : "https://healthid.ndhm.gov.in",
+        "value" : "22-7225-4829-5255"
+      }],
+      "name" : [{
+        "text" : "ABC"
+      }],
+      "telecom" : [{
+        "system" : "phone",
+        "value" : "+919818512600",
+        "use" : "home"
+      }],
+      "gender" : "male",
+      "birthDate" : "1981-01-12"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce",
+    "resource" : {
+      "resourceType" : "Practitioner",
+      "id" : "27d743c1-5a4a-481f-b65c-83877d4fa7ce",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2019-05-29T14:58:58.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-IN\" lang=\"en-IN\">Dr. DEF, MD (Pathology)</div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+            "code" : "MD",
+            "display" : "Medical License number"
+          }]
+        },
+        "system" : "https://doctor.ndhm.gov.in",
+        "value" : "21-1521-3828-3227"
+      }],
+      "name" : [{
+        "text" : "Dr. DEF"
+      }]
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:f54b86a4-5a1a-4d1d-af98-30ee474602bb",
+    "resource" : {
+      "resourceType" : "Invoice",
+      "id" : "f54b86a4-5a1a-4d1d-af98-30ee474602bb",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-23T17:02:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/Invoice"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Invoice</b><a name=\"f54b86a4-5a1a-4d1d-af98-30ee474602bb\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Invoice &quot;f54b86a4-5a1a-4d1d-af98-30ee474602bb&quot; Version &quot;1&quot; Updated &quot;2023-08-23 17:02:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-Invoice.html\">Invoice</a></p></div><p><b>identifier</b>: CA/5842</p><p><b>status</b>: issued</p><p><b>type</b>: Pharmacy <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-billing-codes.html\">Billing Codes</a>#01)</span></p><p><b>subject</b>: <a href=\"#Patient_7184ad11-cbb5-4046-98c9-9bf7cbe9f15f\">See above (urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f: Patient)</a></p><p><b>date</b>: 2023-05-01 10:00:00+0530</p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"#Practitioner_27d743c1-5a4a-481f-b65c-83877d4fa7ce\">See above (urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce: Practitioner)</a></td></tr></table><blockquote><p><b>lineItem</b></p><p><b>sequence</b>: 1</p><p><b>chargeItem</b>: <a href=\"#ChargeItem_29f57abe-6635-4b6d-bf7a-410fdb674b85\">See above (urn:uuid:29f57abe-6635-4b6d-bf7a-410fdb674b85: ChargeItem)</a></p><blockquote><p><b>priceComponent</b></p><p><b>type</b>: base</p><p><b>code</b>: Rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#01)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>80.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: informational</p><p><b>code</b>: MRP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#00)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>100.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: Discount <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#02)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>0.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: CGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#03)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>6.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: SGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#04)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>6.0</td><td>INR</td></tr></table></blockquote></blockquote><blockquote><p><b>lineItem</b></p><p><b>sequence</b>: 2</p><p><b>chargeItem</b>: <a href=\"#ChargeItem_6ed98441-298b-4042-8bee-957fa42ed53a\">See above (urn:uuid:6ed98441-298b-4042-8bee-957fa42ed53a: ChargeItem)</a></p><blockquote><p><b>priceComponent</b></p><p><b>type</b>: base</p><p><b>code</b>: Rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#01)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>120.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: informational</p><p><b>code</b>: MRP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#00)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>150.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: Discount <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#02)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>10.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: CGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#03)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>8.4</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: SGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#04)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>8.4</td><td>INR</td></tr></table></blockquote></blockquote><blockquote><p><b>lineItem</b></p><p><b>sequence</b>: 3</p><p><b>chargeItem</b>: <a href=\"#ChargeItem_476f1a6b-8662-4eef-bb73-c018b179b7f3\">See above (urn:uuid:476f1a6b-8662-4eef-bb73-c018b179b7f3: ChargeItem)</a></p><blockquote><p><b>priceComponent</b></p><p><b>type</b>: base</p><p><b>code</b>: Rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#01)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>30.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: informational</p><p><b>code</b>: MRP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#00)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>50.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: Discount <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#02)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>5.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: CGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#03)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>2.7</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: SGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#04)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>2.7</td><td>INR</td></tr></table></blockquote></blockquote><blockquote><p><b>lineItem</b></p><p><b>sequence</b>: 4</p><p><b>chargeItem</b>: <a href=\"#ChargeItem_ebf930bf-e719-4892-91ca-45ea9012f510\">See above (urn:uuid:ebf930bf-e719-4892-91ca-45ea9012f510: ChargeItem)</a></p><blockquote><p><b>priceComponent</b></p><p><b>type</b>: base</p><p><b>code</b>: Rate <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#01)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>350.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: informational</p><p><b>code</b>: MRP <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#00)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>410.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: discount</p><p><b>code</b>: Discount <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#02)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>10.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: CGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#03)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>24.0</td><td>INR</td></tr></table></blockquote><blockquote><p><b>priceComponent</b></p><p><b>type</b>: tax</p><p><b>code</b>: SGST <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-price-components.html\">Price Component</a>#04)</span></p><h3>Amounts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>24.0</td><td>INR</td></tr></table></blockquote></blockquote><h3>TotalNets</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>2752.2</td><td>INR</td></tr></table><h3>TotalGrosses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Value</b></td><td><b>Currency</b></td></tr><tr><td style=\"display: none\">*</td><td>2575.0</td><td>INR</td></tr></table></div>"
+      },
+      "identifier" : [{
+        "value" : "CA/5842"
+      }],
+      "status" : "issued",
+      "type" : {
+        "coding" : [{
+          "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code" : "01",
+          "display" : "Pharmacy"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+        "display" : "Patient"
+      },
+      "date" : "2023-05-01T10:00:00.181+05:30",
+      "participant" : [{
+        "actor" : {
+          "reference" : "urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce",
+          "display" : "Practitioner"
+        }
+      }],
+      "lineItem" : [{
+        "sequence" : 1,
+        "chargeItemReference" : {
+          "reference" : "urn:uuid:29f57abe-6635-4b6d-bf7a-410fdb674b85",
+          "display" : "ChargeItem"
+        },
+        "priceComponent" : [{
+          "type" : "base",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "01",
+              "display" : "Rate"
+            }]
+          },
+          "amount" : {
+            "value" : 80.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "informational",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "00",
+              "display" : "MRP"
+            }]
+          },
+          "amount" : {
+            "value" : 100.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "discount",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "02",
+              "display" : "Discount"
+            }]
+          },
+          "amount" : {
+            "value" : 0.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "03",
+              "display" : "CGST"
+            }]
+          },
+          "amount" : {
+            "value" : 6.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "04",
+              "display" : "SGST"
+            }]
+          },
+          "amount" : {
+            "value" : 6.0,
+            "currency" : "INR"
+          }
+        }]
+      },
+      {
+        "sequence" : 2,
+        "chargeItemReference" : {
+          "reference" : "urn:uuid:6ed98441-298b-4042-8bee-957fa42ed53a",
+          "display" : "ChargeItem"
+        },
+        "priceComponent" : [{
+          "type" : "base",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "01",
+              "display" : "Rate"
+            }]
+          },
+          "amount" : {
+            "value" : 120.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "informational",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "00",
+              "display" : "MRP"
+            }]
+          },
+          "amount" : {
+            "value" : 150.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "discount",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "02",
+              "display" : "Discount"
+            }]
+          },
+          "amount" : {
+            "value" : 10.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "03",
+              "display" : "CGST"
+            }]
+          },
+          "amount" : {
+            "value" : 8.4,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "04",
+              "display" : "SGST"
+            }]
+          },
+          "amount" : {
+            "value" : 8.4,
+            "currency" : "INR"
+          }
+        }]
+      },
+      {
+        "sequence" : 3,
+        "chargeItemReference" : {
+          "reference" : "urn:uuid:476f1a6b-8662-4eef-bb73-c018b179b7f3",
+          "display" : "ChargeItem"
+        },
+        "priceComponent" : [{
+          "type" : "base",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "01",
+              "display" : "Rate"
+            }]
+          },
+          "amount" : {
+            "value" : 30.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "informational",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "00",
+              "display" : "MRP"
+            }]
+          },
+          "amount" : {
+            "value" : 50.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "discount",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "02",
+              "display" : "Discount"
+            }]
+          },
+          "amount" : {
+            "value" : 5.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "03",
+              "display" : "CGST"
+            }]
+          },
+          "amount" : {
+            "value" : 2.7,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "04",
+              "display" : "SGST"
+            }]
+          },
+          "amount" : {
+            "value" : 2.7,
+            "currency" : "INR"
+          }
+        }]
+      },
+      {
+        "sequence" : 4,
+        "chargeItemReference" : {
+          "reference" : "urn:uuid:ebf930bf-e719-4892-91ca-45ea9012f510",
+          "display" : "ChargeItem"
+        },
+        "priceComponent" : [{
+          "type" : "base",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "01",
+              "display" : "Rate"
+            }]
+          },
+          "amount" : {
+            "value" : 350.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "informational",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "00",
+              "display" : "MRP"
+            }]
+          },
+          "amount" : {
+            "value" : 410.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "discount",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "02",
+              "display" : "Discount"
+            }]
+          },
+          "amount" : {
+            "value" : 10.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "03",
+              "display" : "CGST"
+            }]
+          },
+          "amount" : {
+            "value" : 24.0,
+            "currency" : "INR"
+          }
+        },
+        {
+          "type" : "tax",
+          "code" : {
+            "coding" : [{
+              "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-price-components",
+              "code" : "04",
+              "display" : "SGST"
+            }]
+          },
+          "amount" : {
+            "value" : 24.0,
+            "currency" : "INR"
+          }
+        }]
+      }],
+      "totalNet" : {
+        "value" : 2752.2,
+        "currency" : "INR"
+      },
+      "totalGross" : {
+        "value" : 2575.0,
+        "currency" : "INR"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:29f57abe-6635-4b6d-bf7a-410fdb674b85",
+    "resource" : {
+      "resourceType" : "ChargeItem",
+      "id" : "29f57abe-6635-4b6d-bf7a-410fdb674b85",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T11:30:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ChargeItem</b><a name=\"29f57abe-6635-4b6d-bf7a-410fdb674b85\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ChargeItem &quot;29f57abe-6635-4b6d-bf7a-410fdb674b85&quot; Version &quot;1&quot; Updated &quot;2023-08-21 11:30:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ChargeItem.html\">ChargeItem</a></p></div><p><b>status</b>: billed</p><p><b>code</b>: Medicines <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-billing-codes.html\">Billing Codes</a>#05)</span></p><p><b>subject</b>: <a href=\"#Patient_7184ad11-cbb5-4046-98c9-9bf7cbe9f15f\">See above (urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f: Patient)</a></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"#Practitioner_27d743c1-5a4a-481f-b65c-83877d4fa7ce\">See above (urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce: Practitioner)</a></td></tr></table><p><b>quantity</b>: 1.0 Tablet</p><p><b>product</b>: <a href=\"#Medication_fcdaeb8b-266e-4221-9715-7f322ae473ef\">See above (urn:uuid:fcdaeb8b-266e-4221-9715-7f322ae473ef: Medication)</a></p></div>"
+      },
+      "status" : "billed",
+      "code" : {
+        "coding" : [{
+          "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code" : "05",
+          "display" : "Medicines"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+        "display" : "Patient"
+      },
+      "performer" : [{
+        "actor" : {
+          "reference" : "urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce",
+          "display" : "Practitioner"
+        }
+      }],
+      "quantity" : {
+        "value" : 1.0,
+        "unit" : "Tablet"
+      },
+      "productReference" : {
+        "reference" : "urn:uuid:fcdaeb8b-266e-4221-9715-7f322ae473ef",
+        "display" : "Medication"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:6ed98441-298b-4042-8bee-957fa42ed53a",
+    "resource" : {
+      "resourceType" : "ChargeItem",
+      "id" : "6ed98441-298b-4042-8bee-957fa42ed53a",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T14:56:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ChargeItem</b><a name=\"6ed98441-298b-4042-8bee-957fa42ed53a\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ChargeItem &quot;6ed98441-298b-4042-8bee-957fa42ed53a&quot; Version &quot;1&quot; Updated &quot;2023-08-21 14:56:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ChargeItem.html\">ChargeItem</a></p></div><p><b>status</b>: billed</p><p><b>code</b>: Medicines <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-billing-codes.html\">Billing Codes</a>#05)</span></p><p><b>subject</b>: <a href=\"#Patient_7184ad11-cbb5-4046-98c9-9bf7cbe9f15f\">See above (urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f: Patient)</a></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"#Practitioner_27d743c1-5a4a-481f-b65c-83877d4fa7ce\">See above (urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce: Practitioner)</a></td></tr></table><p><b>quantity</b>: 10 Tablet</p><p><b>product</b>: <a href=\"#Medication_e5358d8e-365e-41c6-a965-88f61574c373\">See above (urn:uuid:e5358d8e-365e-41c6-a965-88f61574c373: Medication)</a></p></div>"
+      },
+      "status" : "billed",
+      "code" : {
+        "coding" : [{
+          "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code" : "05",
+          "display" : "Medicines"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+        "display" : "Patient"
+      },
+      "performer" : [{
+        "actor" : {
+          "reference" : "urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce",
+          "display" : "Practitioner"
+        }
+      }],
+      "quantity" : {
+        "value" : 10,
+        "unit" : "Tablet"
+      },
+      "productReference" : {
+        "reference" : "urn:uuid:e5358d8e-365e-41c6-a965-88f61574c373",
+        "display" : "Medication"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:476f1a6b-8662-4eef-bb73-c018b179b7f3",
+    "resource" : {
+      "resourceType" : "ChargeItem",
+      "id" : "476f1a6b-8662-4eef-bb73-c018b179b7f3",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T11:30:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ChargeItem</b><a name=\"476f1a6b-8662-4eef-bb73-c018b179b7f3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ChargeItem &quot;476f1a6b-8662-4eef-bb73-c018b179b7f3&quot; Version &quot;1&quot; Updated &quot;2023-08-21 11:30:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ChargeItem.html\">ChargeItem</a></p></div><p><b>status</b>: billed</p><p><b>code</b>: Medicines <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-billing-codes.html\">Billing Codes</a>#05)</span></p><p><b>subject</b>: <a href=\"#Patient_7184ad11-cbb5-4046-98c9-9bf7cbe9f15f\">See above (urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f: Patient)</a></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"#Practitioner_27d743c1-5a4a-481f-b65c-83877d4fa7ce\">See above (urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce: Practitioner)</a></td></tr></table><p><b>quantity</b>: 15 Tablet</p><p><b>product</b>: <a href=\"#Medication_dc870fbc-ca1b-4749-b12c-2876928e4a1d\">See above (urn:uuid:dc870fbc-ca1b-4749-b12c-2876928e4a1d: Medication)</a></p></div>"
+      },
+      "status" : "billed",
+      "code" : {
+        "coding" : [{
+          "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code" : "05",
+          "display" : "Medicines"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+        "display" : "Patient"
+      },
+      "performer" : [{
+        "actor" : {
+          "reference" : "urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce",
+          "display" : "Practitioner"
+        }
+      }],
+      "quantity" : {
+        "value" : 15,
+        "unit" : "Tablet"
+      },
+      "productReference" : {
+        "reference" : "urn:uuid:dc870fbc-ca1b-4749-b12c-2876928e4a1d",
+        "display" : "Medication"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:ebf930bf-e719-4892-91ca-45ea9012f510",
+    "resource" : {
+      "resourceType" : "ChargeItem",
+      "id" : "ebf930bf-e719-4892-91ca-45ea9012f510",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T11:30:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/ChargeItem"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: ChargeItem</b><a name=\"ebf930bf-e719-4892-91ca-45ea9012f510\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource ChargeItem &quot;ebf930bf-e719-4892-91ca-45ea9012f510&quot; Version &quot;1&quot; Updated &quot;2023-08-21 11:30:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-ChargeItem.html\">ChargeItem</a></p></div><p><b>status</b>: billed</p><p><b>code</b>: Medicines <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-ndhm-billing-codes.html\">Billing Codes</a>#05)</span></p><p><b>subject</b>: <a href=\"#Patient_7184ad11-cbb5-4046-98c9-9bf7cbe9f15f\">See above (urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f: Patient)</a></p><h3>Performers</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Actor</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"#Practitioner_27d743c1-5a4a-481f-b65c-83877d4fa7ce\">See above (urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce: Practitioner)</a></td></tr></table><p><b>quantity</b>: 1.0 Eye Gel</p><p><b>product</b>: <a href=\"#Medication_4c57f934-6319-4e35-901a-837c33fa51fc\">See above (urn:uuid:4c57f934-6319-4e35-901a-837c33fa51fc: Medication)</a></p></div>"
+      },
+      "status" : "billed",
+      "code" : {
+        "coding" : [{
+          "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-billing-codes",
+          "code" : "05",
+          "display" : "Medicines"
+        }]
+      },
+      "subject" : {
+        "reference" : "urn:uuid:7184ad11-cbb5-4046-98c9-9bf7cbe9f15f",
+        "display" : "Patient"
+      },
+      "performer" : [{
+        "actor" : {
+          "reference" : "urn:uuid:27d743c1-5a4a-481f-b65c-83877d4fa7ce",
+          "display" : "Practitioner"
+        }
+      }],
+      "quantity" : {
+        "value" : 1.0,
+        "unit" : "Eye Gel"
+      },
+      "productReference" : {
+        "reference" : "urn:uuid:4c57f934-6319-4e35-901a-837c33fa51fc",
+        "display" : "Medication"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:fcdaeb8b-266e-4221-9715-7f322ae473ef",
+    "resource" : {
+      "resourceType" : "Medication",
+      "id" : "fcdaeb8b-266e-4221-9715-7f322ae473ef",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T10:25:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/Medication"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Medication</b><a name=\"fcdaeb8b-266e-4221-9715-7f322ae473ef\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Medication &quot;fcdaeb8b-266e-4221-9715-7f322ae473ef&quot; Version &quot;1&quot; Updated &quot;2023-08-21 10:25:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-Medication.html\">Medication</a></p></div><p><b>identifier</b>: Harmonized System of Nomenclature/29222933</p><p><b>code</b>: Paracetamol 1 g oral tablet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#1172863005)</span></p><p><b>form</b>: Tablet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#385055001)</span></p><h3>Batches</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>LotNumber</b></td><td><b>ExpirationDate</b></td></tr><tr><td style=\"display: none\">*</td><td>22180423</td><td>2023-02-24</td></tr></table></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "code" : "HSN",
+            "display" : "Harmonized System of Nomenclature"
+          }]
+        },
+        "value" : "29222933"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "1172863005",
+          "display" : "Paracetamol 1 g oral tablet"
+        }]
+      },
+      "form" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "385055001",
+          "display" : "Tablet"
+        }]
+      },
+      "batch" : {
+        "lotNumber" : "22180423",
+        "expirationDate" : "2023-02-24"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:e5358d8e-365e-41c6-a965-88f61574c373",
+    "resource" : {
+      "resourceType" : "Medication",
+      "id" : "e5358d8e-365e-41c6-a965-88f61574c373",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T14:49:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/Medication"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Medication</b><a name=\"e5358d8e-365e-41c6-a965-88f61574c373\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Medication &quot;e5358d8e-365e-41c6-a965-88f61574c373&quot; Version &quot;1&quot; Updated &quot;2023-08-21 14:49:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-Medication.html\">Medication</a></p></div><p><b>identifier</b>: Harmonized System of Nomenclature/3004</p><p><b>code</b>: Sulfalene 2 g oral tablet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#324409009)</span></p><p><b>form</b>: Tablet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#385055001)</span></p><h3>Batches</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>LotNumber</b></td><td><b>ExpirationDate</b></td></tr><tr><td style=\"display: none\">*</td><td>22180424</td><td>2023-03-24</td></tr></table></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "code" : "HSN",
+            "display" : "Harmonized System of Nomenclature"
+          }]
+        },
+        "value" : "3004"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "324409009",
+          "display" : "Sulfalene 2 g oral tablet"
+        }]
+      },
+      "form" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "385055001",
+          "display" : "Tablet"
+        }]
+      },
+      "batch" : {
+        "lotNumber" : "22180424",
+        "expirationDate" : "2023-03-24"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:dc870fbc-ca1b-4749-b12c-2876928e4a1d",
+    "resource" : {
+      "resourceType" : "Medication",
+      "id" : "dc870fbc-ca1b-4749-b12c-2876928e4a1d",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T14:51:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/Medication"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Medication</b><a name=\"dc870fbc-ca1b-4749-b12c-2876928e4a1d\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Medication &quot;dc870fbc-ca1b-4749-b12c-2876928e4a1d&quot; Version &quot;1&quot; Updated &quot;2023-08-21 14:51:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-Medication.html\">Medication</a></p></div><p><b>identifier</b>: Harmonized System of Nomenclature/30049062</p><p><b>code</b>: Aspirin 650 mg gastro-resistant oral tablet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#765676008)</span></p><p><b>form</b>: Tablet <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#385055001)</span></p><h3>Batches</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>LotNumber</b></td><td><b>ExpirationDate</b></td></tr><tr><td style=\"display: none\">*</td><td>22180425</td><td>2023-04-24</td></tr></table></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "code" : "HSN",
+            "display" : "Harmonized System of Nomenclature"
+          }]
+        },
+        "value" : "30049062"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "765676008",
+          "display" : "Aspirin 650 mg gastro-resistant oral tablet"
+        }]
+      },
+      "form" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "385055001",
+          "display" : "Tablet"
+        }]
+      },
+      "batch" : {
+        "lotNumber" : "22180425",
+        "expirationDate" : "2023-04-24"
+      }
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:4c57f934-6319-4e35-901a-837c33fa51fc",
+    "resource" : {
+      "resourceType" : "Medication",
+      "id" : "4c57f934-6319-4e35-901a-837c33fa51fc",
+      "meta" : {
+        "versionId" : "1",
+        "lastUpdated" : "2023-08-21T14:53:00.181+05:30",
+        "profile" : ["https://nrces.in/ndhm/fhir/r4/StructureDefinition/Medication"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Medication</b><a name=\"4c57f934-6319-4e35-901a-837c33fa51fc\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Medication &quot;4c57f934-6319-4e35-901a-837c33fa51fc&quot; Version &quot;1&quot; Updated &quot;2023-08-21 14:53:00+0530&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-Medication.html\">Medication</a></p></div><p><b>identifier</b>: Harmonized System of Nomenclature/3003</p><p><b>code</b>: Carbomer-980 2 mg/g eye gel <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#330814003)</span></p><p><b>form</b>: Eye gel <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://browser.ihtsdotools.org/\">SNOMED CT</a>#385122009)</span></p><h3>Batches</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>LotNumber</b></td><td><b>ExpirationDate</b></td></tr><tr><td style=\"display: none\">*</td><td>22180426</td><td>2023-05-24</td></tr></table></div>"
+      },
+      "identifier" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "https://nrces.in/ndhm/fhir/r4/CodeSystem/ndhm-identifier-type-code",
+            "code" : "HSN",
+            "display" : "Harmonized System of Nomenclature"
+          }]
+        },
+        "value" : "3003"
+      }],
+      "code" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "330814003",
+          "display" : "Carbomer-980 2 mg/g eye gel"
+        }]
+      },
+      "form" : {
+        "coding" : [{
+          "system" : "http://snomed.info/sct",
+          "code" : "385122009",
+          "display" : "Eye gel"
+        }]
+      },
+      "batch" : {
+        "lotNumber" : "22180426",
+        "expirationDate" : "2023-05-24"
+      }
+    }
+  }]
+}
