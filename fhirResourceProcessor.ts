@@ -68,6 +68,17 @@ export interface ProcessedMedicationInfo {
     status?: string;
 }
 
+export interface ProcessedMedication {
+    processedType: 'Medication';
+    name: string;
+    form?: string;
+    identifier?: string;
+    batch?: {
+        lotNumber?: string;
+        expirationDate?: string;
+    };
+}
+
 export interface ProcessedConditionInfo {
     processedType: 'ConditionInfo';
     code: string;
@@ -204,6 +215,7 @@ export type ProcessedFhirResource =
     | ProcessedOrganizationInfo
     | ProcessedObservationResult
     | ProcessedMedicationInfo
+    | ProcessedMedication
     | ProcessedConditionInfo
     | ProcessedProcedureInfo
     | ProcessedEncounterInfo
@@ -506,8 +518,21 @@ export function processFhirResource(resource: R4.IResourceList | undefined | nul
                 } : undefined
             };
 
+        case 'Medication':
+            const medication = resource as R4.IMedication;
+            return {
+                processedType: 'Medication',
+                name: extractCodeableConceptText(medication.code) || 'Unknown Medication',
+                form: extractCodeableConceptText(medication.form),
+                identifier: medication.identifier?.[0]?.value,
+                batch: medication.batch ? {
+                    lotNumber: medication.batch.lotNumber,
+                    expirationDate: medication.batch.expirationDate
+                } : undefined
+            };
+
         default:
-            // console.warn(`processFhirResource: Unhandled resourceType: ${resource.resourceType}`);
+            console.warn(`processFhirResource: Unhandled resourceType: ${resource.resourceType}`);
             return { processedType: 'Unhandled', originalResourceType: resource.resourceType };
     }
 }
