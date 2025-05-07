@@ -222,6 +222,13 @@
  */
 
 /**
+ * @typedef {Object} AttachmentRef
+ * @property {string} bundleId
+ * @property {string} sessionId
+ * @property {number} num
+ */
+
+/**
  * Union of all possible processed resource types.
  * @typedef {ProcessedAttachment
 *  | ProcessedPatientInfo
@@ -289,6 +296,7 @@
 * It includes a bundleType and arrays of processed resources, keyed by their processedType.
 * @typedef {Object} TransformedBundle
 * @property {BundleType} bundleType
+* @property {Array<AttachmentRef>} [AttachmentRefs]
 * @property {Array<ProcessedAttachment>} [Attachment]
 * @property {Array<ProcessedPatientInfo>} [PatientInfo]
 * @property {Array<ProcessedPractitionerInfo>} [PractitionerInfo]

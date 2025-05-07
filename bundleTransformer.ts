@@ -9,6 +9,12 @@ export type ProcessedResourceMap = {
     [K in ProcessedFhirResource['processedType']]?: Array<Extract<ProcessedFhirResource, { processedType: K }>>;
 };
 
+type AttachmentRef = {
+    bundleId: string;
+    sessionId: string;
+    num: number;
+};
+
 type BundleType =
     // Document Bundle Types (with Record suffix)
     | 'WellnessRecord'
@@ -56,6 +62,7 @@ export const profileToBundleType: Record<string, BundleType> = {
 
 type TransformedBundle = ProcessedResourceMap & {
     bundleType: BundleType;
+    AttachmentRefs?: AttachmentRef[];
 };
 
 // Helper function to process presentedForm into ProcessedAttachment array
