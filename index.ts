@@ -3,8 +3,11 @@ import { analyzeAllBundles, readBundleFile } from './bundleAnalyzer.js';
 import { transformFHIRResource, profileToBundleType } from './bundleTransformer.js';
 import * as fs from 'fs/promises';
 
+type folderPaths = 'testJson' | 'bundleExample';
+
 async function main() {
-    const bundleDir = path.join(process.cwd(), 'bundleExample');
+    const folder: folderPaths = 'bundleExample';
+    const bundleDir = path.join(process.cwd(), folder);
     
     // First analyze all bundles
     await analyzeAllBundles(bundleDir);
