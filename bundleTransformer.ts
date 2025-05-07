@@ -1,6 +1,7 @@
 import { R4 } from '@ahryman40k/ts-fhir-types';
 import { Bundle, BundleEntry } from './bundleAnalyzer.js';
 import { processFhirResource, ProcessedFhirResource, ProcessedAttachment } from './fhirResourceProcessor.js';
+import { v4 as uuidv4 } from 'uuid';
 
 // Helper to get the specific processed resource type from the union
 export type SpecificProcessedResource<PType extends ProcessedFhirResource['processedType']> =
@@ -62,6 +63,7 @@ export const profileToBundleType: Record<string, BundleType> = {
 
 type TransformedBundle = ProcessedResourceMap & {
     bundleType: BundleType;
+    id: string;
     AttachmentRefs?: AttachmentRef[];
 };
 
@@ -131,7 +133,7 @@ function createTransformer(bundle: Bundle): TransformedBundle {
         }
     }
 
-    return { ...result, bundleType };
+    return { ...result, bundleType, id: uuidv4() };
 }
 
 export function transformFHIRResource(input: any): TransformedBundle {

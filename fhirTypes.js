@@ -296,6 +296,7 @@
 * It includes a bundleType and arrays of processed resources, keyed by their processedType.
 * @typedef {Object} TransformedBundle
 * @property {BundleType} bundleType
+* @property {string} id
 * @property {Array<AttachmentRef>} [AttachmentRefs]
 * @property {Array<ProcessedAttachment>} [Attachment]
 * @property {Array<ProcessedPatientInfo>} [PatientInfo]
