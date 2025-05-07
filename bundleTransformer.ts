@@ -2,20 +2,57 @@ import { R4 } from '@ahryman40k/ts-fhir-types';
 import { Bundle, BundleEntry } from './bundleAnalyzer.js';
 import { processFhirResource, ProcessedFhirResource } from './fhirResourceProcessor.js';
 
-type ProcessedResourceWithoutType = Omit<ProcessedFhirResource, 'processedType'>;
-type ProcessedResourceMap = {
-    [K in ProcessedFhirResource['processedType']]?: ProcessedResourceWithoutType | ProcessedResourceWithoutType[];
+// Helper to get the specific processed resource type from the union
+export type SpecificProcessedResource<PType extends ProcessedFhirResource['processedType']> =
+    Extract<ProcessedFhirResource, { processedType: PType }>;
+export type ProcessedResourceMap = {
+    [K in ProcessedFhirResource['processedType']]?: Array<Extract<ProcessedFhirResource, { processedType: K }>>;
 };
 
-type BundleType = 
-    | 'DiagnosticReport'
-    | 'Prescription'
-    | 'DischargeSummary'
-    | 'ImmunizationRecord'
-    | 'OPConsultNote'
+type BundleType =
+    // Document Bundle Types (with Record suffix)
     | 'WellnessRecord'
+    | 'PrescriptionRecord'
+    | 'DischargeSummaryRecord'
+    | 'ImmunizationRecord'
+    | 'OPConsultRecord'
     | 'InvoiceRecord'
-    | 'HealthDocumentRecord';
+    | 'HealthDocumentRecord'
+    | 'DiagnosticReportRecord'
+    // Resource Types
+    | 'Patient'
+    | 'Practitioner'
+    | 'Organization'
+    | 'Encounter'
+    | 'Observation'
+    | 'DiagnosticReport'
+    | 'DocumentReference'
+    | 'MedicationRequest'
+    | 'Immunization'
+    | 'Invoice'
+    | 'Condition'
+    | 'Procedure'
+    | 'AllergyIntolerance'
+    | 'CarePlan'
+    | 'Goal'
+    | 'ServiceRequest'
+    | 'Specimen'
+    | 'Binary'
+    | 'Composition'
+    | 'Bundle'
+    ;
+
+// Map profile URLs to bundle types
+export const profileToBundleType: Record<string, BundleType> = {
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/WellnessRecord': 'WellnessRecord',
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/PrescriptionRecord': 'PrescriptionRecord',
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/OPConsultRecord': 'OPConsultRecord',
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/InvoiceRecord': 'InvoiceRecord',
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/HealthDocumentRecord': 'HealthDocumentRecord',
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/DischargeSummaryRecord': 'DischargeSummaryRecord',
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/DiagnosticReportRecord': 'DiagnosticReportRecord',
+    'https://nrces.in/ndhm/fhir/r4/StructureDefinition/ImmunizationRecord': 'ImmunizationRecord'
+};
 
 type TransformedBundle = ProcessedResourceMap & {
     bundleType: BundleType;
@@ -28,68 +65,38 @@ function createTransformer(bundle: Bundle): TransformedBundle {
         if (!entry.resource) return;
         const processed = processFhirResource(entry.resource);
         const processedType = processed.processedType;
-        const { processedType: _, ...processedWithoutType } = processed;
 
-        if (result[processedType]) {
-            const existing = result[processedType] as ProcessedResourceWithoutType;
-            if (Array.isArray(existing)) {
-                existing.push(processedWithoutType);
-            } else {
-                result[processedType] = [existing, processedWithoutType];
-            }
-        } else {
-            result[processedType] = processedWithoutType;
+        if (!result[processedType]) {
+            result[processedType] = [];
         }
+        (result[processedType] as Array<typeof processed>).push(processed);
     });
 
-    // Determine bundle type
-    const hasDiagnosticReport = bundle.entry?.some(e => e.resource?.resourceType === 'DiagnosticReport');
-    const hasPrescription = bundle.entry?.some(e => e.resource?.resourceType === 'MedicationRequest');
-    const hasDischargeSummary = bundle.entry?.some(e => e.resource?.resourceType === 'Encounter' && 
-        e.resource?.class?.code === 'IMP');
-    const hasImmunization = bundle.entry?.some(e => e.resource?.resourceType === 'Immunization');
-    const hasOPConsult = bundle.entry?.some(e => e.resource?.resourceType === 'Encounter' && 
-        e.resource?.class?.code === 'AMB');
-    const hasWellness = bundle.entry?.some(e => e.resource?.resourceType === 'Observation' && 
-        e.resource?.category?.[0]?.coding?.[0]?.code === 'vital-signs');
-    const hasInvoice = bundle.entry?.some(e => e.resource?.resourceType === 'Invoice');
-    const hasHealthDocument = bundle.entry?.some(e => e.resource?.resourceType === 'DocumentReference' && 
-        !hasDiagnosticReport && !hasPrescription && !hasDischargeSummary && !hasImmunization && 
-        !hasOPConsult && !hasWellness && !hasInvoice);
+    // Get the Composition resource from the first entry
+    const firstEntryResource = bundle.entry?.[0]?.resource;
+    if (!firstEntryResource) {
+        throw new Error('Bundle must start with a resource');
+    }
 
+    // Extract the profile URL from the Composition resource
+    const profileUrl = firstEntryResource.meta?.profile?.[0];
+    
+    // If we have a profile URL, try to map it to a bundle type
     let bundleType: BundleType;
-    if (hasDiagnosticReport) {
-        bundleType = 'DiagnosticReport';
-    } else if (hasPrescription) {
-        bundleType = 'Prescription';
-    } else if (hasDischargeSummary) {
-        bundleType = 'DischargeSummary';
-    } else if (hasImmunization) {
-        bundleType = 'ImmunizationRecord';
-    } else if (hasOPConsult) {
-        bundleType = 'OPConsultNote';
-    } else if (hasWellness) {
-        bundleType = 'WellnessRecord';
-    } else if (hasInvoice) {
-        bundleType = 'InvoiceRecord';
-    } else if (hasHealthDocument) {
-        bundleType = 'HealthDocumentRecord';
+    if (profileUrl && profileToBundleType[profileUrl]) {
+        bundleType = profileToBundleType[profileUrl];
     } else {
-        throw new Error('Unknown bundle type');
+        // If no profile URL or unknown profile, use the resource type of the first entry
+        bundleType = firstEntryResource.resourceType as BundleType;
     }
 
     return { ...result, bundleType };
 }
 
-export function transformFHIRResource(input: any): any {
+export function transformFHIRResource(input: any): TransformedBundle {
     // Handle null/undefined input
     if (!input) {
         throw new Error('Input is null or undefined');
-    }
-
-    // Check if it's a list of bundles
-    if (Array.isArray(input.entries)) {
-        return input.entries.map((entry: any) => transformFHIRResource(entry));
     }
 
     // Check if it's a single bundle
