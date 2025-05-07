@@ -1,6 +1,6 @@
 import { R4 } from '@ahryman40k/ts-fhir-types';
 import { Bundle, BundleEntry } from './bundleAnalyzer.js';
-import { processFhirResource, ProcessedFhirResource } from './fhirResourceProcessor.js';
+import { processFhirResource, ProcessedFhirResource, ProcessedAttachment } from './fhirResourceProcessor.js';
 
 // Helper to get the specific processed resource type from the union
 export type SpecificProcessedResource<PType extends ProcessedFhirResource['processedType']> =
@@ -58,6 +58,19 @@ type TransformedBundle = ProcessedResourceMap & {
     bundleType: BundleType;
 };
 
+// Helper function to process presentedForm into ProcessedAttachment array
+function processPresentedForm(presentedForm?: R4.IAttachment[]): ProcessedAttachment[] {
+    if (!presentedForm || presentedForm.length === 0) return [];
+    
+    return presentedForm.map(form => ({
+        processedType: 'Attachment',
+        contentType: form.contentType || 'application/octet-stream',
+        // data: form.data || '',
+        data: 'base64PDFDATA',
+        title: form.title || 'Document'
+    }));
+}
+
 function createTransformer(bundle: Bundle): TransformedBundle {
     const result: ProcessedResourceMap = {};
 
@@ -88,6 +101,27 @@ function createTransformer(bundle: Bundle): TransformedBundle {
     } else {
         // If no profile URL or unknown profile, use the resource type of the first entry
         bundleType = firstEntryResource.resourceType as BundleType;
+    }
+
+    // Special handling for DiagnosticReport and DiagnosticReportRecord
+    if (bundleType === 'DiagnosticReportRecord' || bundleType === 'DiagnosticReport') {
+        // Check if we already have Attachments
+        if (!result['Attachment'] || result['Attachment'].length === 0) {
+            // Find DiagnosticReport entry and process its presentedForm
+            const diagnosticReportEntry = bundle.entry?.find(entry => 
+                entry.resource?.resourceType === 'DiagnosticReport'
+            );
+            
+            if (diagnosticReportEntry?.resource) {
+                const diagnosticReport = diagnosticReportEntry.resource as R4.IDiagnosticReport;
+                if (diagnosticReport.presentedForm && diagnosticReport.presentedForm.length > 0) {
+                    const processedAttachments = processPresentedForm(diagnosticReport.presentedForm);
+                    if (processedAttachments.length > 0) {
+                        result['Attachment'] = processedAttachments;
+                    }
+                }
+            }
+        }
     }
 
     return { ...result, bundleType };

@@ -31,7 +31,9 @@ export function analyzeBundle(bundle: Bundle): BundleSummary {
             
             // Check for attachments (Binary resources or attachments in other resources)
             if (entry.resource.resourceType === 'Binary' || 
-                (entry.resource as any).content?.some((c: any) => c.attachment)) {
+                (entry.resource as any).content?.some((c: any) => c.attachment) ||
+                (entry.resource as any).presentedForm?.some((p: any) => p.data)
+            ) {
                 summary.hasAttachments = true;
             }
         }
