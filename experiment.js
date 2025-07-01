@@ -1,6 +1,6 @@
 import { isResourceType } from "./fhirTypes";
 
 const testPayload = (payload) => {
-    if (isResourceType(payload, '')) {
+    if (isResourceType(payload, 'DiagnosticReport')) {
     }
 }

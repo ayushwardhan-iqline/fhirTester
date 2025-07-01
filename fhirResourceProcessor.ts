@@ -66,6 +66,7 @@ export interface ProcessedMedicationInfo {
     frequency?: string;
     duration?: string;
     status?: string;
+    authoredOn?: string;
 }
 
 export interface ProcessedMedication {
@@ -82,8 +83,11 @@ export interface ProcessedMedication {
 export interface ProcessedConditionInfo {
     processedType: 'ConditionInfo';
     code: string;
-    status?: string;
+    clinicalStatus?: string;
+    verificationStatus?: string;
+    recordedDate?: string;
     text?: string;
+    note?: string;
 }
 
 export interface ProcessedProcedureInfo {
@@ -92,6 +96,7 @@ export interface ProcessedProcedureInfo {
     status?: string;
     date?: string;
     text?: string;
+    note?: string;
 }
 
 export interface ProcessedEncounterInfo {
@@ -122,8 +127,11 @@ export interface ProcessedAllergyIntoleranceInfo {
     processedType: 'AllergyIntoleranceInfo';
     substance: string;
     severity?: string;
-    status?: string;
+    clinicalStatus?: string;
+    verificationStatus?: string;
     type?: string;
+    recordedDate?: string;
+    note?: string;
 }
 
 export interface ProcessedCompositionInfo {
@@ -132,6 +140,9 @@ export interface ProcessedCompositionInfo {
     id?: string;
     status: string;
     date?: string;
+    type?: string;
+    category?: string;
+    author?: string;
 }
 
 export interface ProcessedDiagnosticReportInfo {
@@ -181,6 +192,7 @@ export interface ProcessedServiceRequestInfo {
     code: string;
     occurrenceDateTime?: string;
     requester?: string;
+    authoredOn?: string;
 }
 
 export interface ProcessedChargeItemInfo {
@@ -339,6 +351,7 @@ export function processFhirResource(resource: R4.IResourceList | undefined | nul
                 frequency: extractCodeableConceptText(dosageInstruction?.timing?.code) || frequencyInfo,
                 duration: medReq.dispenseRequest?.validityPeriod?.end || '', // Or expectedSupplyDuration
                 status: medReq.status || '',
+                authoredOn: medReq.authoredOn || '',
             };
 
         case 'Condition':
@@ -346,8 +359,11 @@ export function processFhirResource(resource: R4.IResourceList | undefined | nul
             return {
                 processedType: 'ConditionInfo',
                 code: extractCodeableConceptText(condition.code) || 'Unknown Condition',
-                status: extractCodeableConceptText(condition.clinicalStatus) || extractCodeableConceptText(condition.verificationStatus) || '',
+                clinicalStatus: extractCodeableConceptText(condition.clinicalStatus) || '',
+                verificationStatus: extractCodeableConceptText(condition.verificationStatus) || '',
+                recordedDate: condition.recordedDate,
                 text: extractCodeableConceptText(condition.code), // Often same as code for simple cases
+                note: condition.note?.[0]?.text || '',
             };
 
         case 'Procedure':
@@ -358,6 +374,7 @@ export function processFhirResource(resource: R4.IResourceList | undefined | nul
                 status: procedure.status || '',
                 date: procedure.performedDateTime || procedure.performedPeriod?.start || '',
                 text: extractCodeableConceptText(procedure.code),
+                note: procedure.note?.[0]?.text || '',
             };
 
         case 'Encounter':
@@ -397,8 +414,11 @@ export function processFhirResource(resource: R4.IResourceList | undefined | nul
                 processedType: 'AllergyIntoleranceInfo',
                 substance: extractCodeableConceptText(allergy.code) || 'Unknown Substance',
                 severity: allergy.reaction?.[0]?.severity || '',
-                status: extractCodeableConceptText(allergy.clinicalStatus) || extractCodeableConceptText(allergy.verificationStatus) || '',
-                type: allergy.type || ''
+                clinicalStatus: extractCodeableConceptText(allergy.clinicalStatus) || '',
+                verificationStatus: extractCodeableConceptText(allergy.verificationStatus) || '',
+                type: allergy.type || '',
+                recordedDate: allergy.recordedDate,
+                note: allergy.note?.[0]?.text || '',
             };
 
         case 'DocumentReference':
@@ -435,7 +455,10 @@ export function processFhirResource(resource: R4.IResourceList | undefined | nul
                 title: comp.title || 'Untitled Document',
                 id: comp.id,
                 status: comp.status || 'unknown',
-                date: comp.date
+                date: comp.date,
+                type: extractCodeableConceptText(comp.type) || '',
+                category: extractCodeableConceptText(comp.category?.[0]) || '',
+                author: comp.author?.[0]?.display || '',
             };
 
         case 'Appointment':
@@ -487,7 +510,8 @@ export function processFhirResource(resource: R4.IResourceList | undefined | nul
                 intent: serviceRequest.intent || '',
                 code: extractCodeableConceptText(serviceRequest.code) || '',
                 occurrenceDateTime: serviceRequest.occurrenceDateTime,
-                requester: serviceRequest.requester?.display
+                requester: serviceRequest.requester?.display,
+                authoredOn: serviceRequest.authoredOn,
             };
 
         case 'ChargeItem':
