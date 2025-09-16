@@ -1,0 +1,597 @@
+{
+  "resourceType": "Bundle",
+  "id": "OPConsultNote-68c27831f1991e244ecedb79",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2025-09-11T12:02:48.433Z",
+    "profile": [
+      "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentBundle"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+        "code": "V",
+        "display": "very restricted"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://hip.in",
+    "value": "7e7ca3cd-e875-403e-83de-21cf9f5c4656"
+  },
+  "type": "document",
+  "timestamp": "2025-09-11T12:02:48.433Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:d7af1024-e1d4-47f2-ab9e-0ec40d955da2",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "d7af1024-e1d4-47f2-ab9e-0ec40d955da2",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2025-09-11T12:02:48.433Z",
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/OPConsultRecord"
+          ]
+        },
+        "language": "en-IN",
+        "identifier": {
+          "system": "https://ndhm.in/phr",
+          "value": "8b774e68-a075-4284-bfca-5115852ce343"
+        },
+        "status": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "371530004",
+              "display": "Clinical consultation report"
+            }
+          ],
+          "text": "Clinical Consultation report"
+        },
+        "subject": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Ayush Wardhan"
+        },
+        "encounter": {
+          "reference": "urn:uuid:6ef84443-0177-46ef-b9f8-fa183b9d67a6",
+          "display": "Encounter"
+        },
+        "date": "2025-09-11T12:02:48.433Z",
+        "author": [
+          {
+            "reference": "urn:uuid:f0ea9481-ae65-4716-92c0-c255afd5818f",
+            "display": "Manish Awasthi"
+          }
+        ],
+        "title": "Consultation Report",
+        "section": [
+          {
+            "title": "Medical History",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "371529009",
+                  "display": "History and physical report"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:18b0e1af-7542-4636-8f57-84bd7cd21b04",
+                "display": "Condition"
+              }
+            ]
+          },
+          {
+            "title": "Allergies",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "722446000",
+                  "display": "Allergy record"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:73b4107b-4d4b-4484-a65b-d805a2fa0b90",
+                "display": "AllergyIntolerance"
+              }
+            ]
+          },
+          {
+            "title": "Investigation Advice",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "721963009",
+                  "display": "Order document"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d009a36b-2ddc-4521-a715-44ca9d42ce73",
+                "display": "ServiceRequest"
+              }
+            ]
+          },
+          {
+            "title": "Procedure",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "371525003",
+                  "display": "Clinical procedure report"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:dfdd710c-d903-4a0a-97ac-74d1b670c350",
+                "display": "Procedure"
+              }
+            ]
+          },
+          {
+            "title": "Medications",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "721912009",
+                  "display": "Medication summary document"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:e87bf6b2-1535-4922-8787-74a061104f4a",
+                "display": "MedicationRequest"
+              }
+            ]
+          },
+          {
+            "title": "Follow Up",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "736271009",
+                  "display": "Outpatient care plan"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:ee0fed20-f85d-44e6-a5ca-934330eed77d",
+                "display": "Appointment"
+              }
+            ]
+          },
+          {
+            "title": "Document Reference",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "371530004",
+                  "display": "Clinical consultation report"
+                }
+              ]
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:932452d9-0ef7-45fe-9115-aba47c59fbf1",
+                "display": "DocumentReference"
+              }
+            ]
+          }
+        ],
+        "custodian": {
+          "reference": "urn:uuid:2078ffaf-1bfe-47eb-a24c-82c2ff592d3e",
+          "display": "Iqline"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6ef84443-0177-46ef-b9f8-fa183b9d67a6",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "6ef84443-0177-46ef-b9f8-fa183b9d67a6",
+        "meta": {
+          "lastUpdated": "2025-09-11T12:02:48.433Z",
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Encounter"
+          ]
+        },
+        "identifier": [
+          { "system": "https://ndhm.in", "value": "V-250911-0002" }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Patient"
+        },
+        "period": { "start": "2025-09-11T07:20:17.101Z" },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:18b0e1af-7542-4636-8f57-84bd7cd21b04",
+              "display": "Condition"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "39154008",
+                  "display": "Clinical diagnosis"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f0ea9481-ae65-4716-92c0-c255afd5818f",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "f0ea9481-ae65-4716-92c0-c255afd5818f",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2025-09-11T12:02:48.433Z",
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MD",
+                  "display": "Medical License number"
+                }
+              ]
+            },
+            "system": "https://doctor.ndhm.gov.in",
+            "value": "6772cf123687cb8eccda9fbd"
+          }
+        ],
+        "name": [{ "text": "Manish Awasthi" }]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "f7d677be-df38-4b97-86c5-a0b6957482b7",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2025-09-11T12:02:48.433Z",
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient"
+          ]
+        },
+        "identifier": [
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR",
+                  "display": "Medical record number"
+                }
+              ]
+            },
+            "system": "https://healthid.ndhm.gov.in",
+            "value": "MOH19965"
+          }
+        ],
+        "name": [{ "text": "Ayush Wardhan" }],
+        "telecom": [
+          { "system": "phone", "value": "8506046684", "use": "home" }
+        ],
+        "gender": "male",
+        "birthDate": "2000-11-21"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:18b0e1af-7542-4636-8f57-84bd7cd21b04",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "18b0e1af-7542-4636-8f57-84bd7cd21b04",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Condition"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "code": { "text": "Burnout" },
+        "subject": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Patient"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:73b4107b-4d4b-4484-a65b-d805a2fa0b90",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "73b4107b-4d4b-4484-a65b-d805a2fa0b90",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/AllergyIntolerance"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "code": { "text": "Dander" },
+        "patient": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Patient"
+        },
+        "recordedDate": "2025-09-11T12:02:48.433Z",
+        "recorder": {
+          "reference": "urn:uuid:f0ea9481-ae65-4716-92c0-c255afd5818f",
+          "display": "Practitioner"
+        },
+        "note": [{ "text": "Sneeze - mild" }]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d009a36b-2ddc-4521-a715-44ca9d42ce73",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "d009a36b-2ddc-4521-a715-44ca9d42ce73",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ServiceRequest"
+          ]
+        },
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": { "text": "APTT" },
+        "subject": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Patient"
+        },
+        "authoredOn": "2025-09-11T12:02:48.433Z",
+        "requester": {
+          "reference": "urn:uuid:f0ea9481-ae65-4716-92c0-c255afd5818f",
+          "display": "Manish Awasthi"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dfdd710c-d903-4a0a-97ac-74d1b670c350",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dfdd710c-d903-4a0a-97ac-74d1b670c350",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Procedure"
+          ]
+        },
+        "status": "completed",
+        "code": { "text": "Rest" },
+        "subject": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Patient"
+        },
+        "performedDateTime": "2025-11-21"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e87bf6b2-1535-4922-8787-74a061104f4a",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "e87bf6b2-1535-4922-8787-74a061104f4a",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/MedicationRequest"
+          ]
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "D360003",
+              "display": "4FDC"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Ayush Wardhan"
+        },
+        "authoredOn": "2025-09-11",
+        "requester": {
+          "reference": "urn:uuid:f0ea9481-ae65-4716-92c0-c255afd5818f",
+          "display": "Manish Awasthi"
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:18b0e1af-7542-4636-8f57-84bd7cd21b04",
+            "display": "Condition"
+          }
+        ],
+        "dosageInstruction": [{ "text": "--1, 1, Once Daily" }]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ee0fed20-f85d-44e6-a5ca-934330eed77d",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "ee0fed20-f85d-44e6-a5ca-934330eed77d",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Appointment"
+          ]
+        },
+        "status": "booked",
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "11429006",
+                "display": "Consultation"
+              }
+            ]
+          }
+        ],
+        "appointmentType": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "185389009",
+              "display": "Follow-up visit"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:18b0e1af-7542-4636-8f57-84bd7cd21b04",
+            "display": "Condition"
+          }
+        ],
+        "description": "Pls rest",
+        "start": "2026-02-11T12:02:48.434Z",
+        "created": "2025-09-11T12:02:48.433Z",
+        "participant": [
+          {
+            "actor": {
+              "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+              "display": "Patient"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "urn:uuid:f0ea9481-ae65-4716-92c0-c255afd5818f",
+              "display": "Practitioner"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:932452d9-0ef7-45fe-9115-aba47c59fbf1",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "932452d9-0ef7-45fe-9115-aba47c59fbf1",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentReference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": { "text": "Consultation attachment" },
+        "subject": {
+          "reference": "urn:uuid:f7d677be-df38-4b97-86c5-a0b6957482b7",
+          "display": "Patient"
+        },
+        "content": [
+          {
+            "attachment": {
+              "contentType": "application/pdf",
+              "language": "en-IN",
+              "data": "some-base-64",
+              "title": "Consultation attachment",
+              "creation": "2025-09-11T12:02:48.433Z"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2078ffaf-1bfe-47eb-a24c-82c2ff592d3e",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "2078ffaf-1bfe-47eb-a24c-82c2ff592d3e",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Organization"
+          ]
+        },
+        "identifier": [
+          { "system": "https://facility.ndhm.gov.in", "value": "39232493" }
+        ],
+        "name": "Iqline",
+        "telecom": [
+          { "system": "phone", "value": "+91 243 2634 1278", "use": "work" },
+          { "system": "email", "value": "info@iqline.co.in", "use": "work" }
+        ]
+      }
+    }
+  ],
+  "signature": {
+    "type": [
+      {
+        "system": "urn:iso-astm:E1762-95:2013",
+        "code": "1.2.840.10065.1.12.1.1",
+        "display": "Author's Signature"
+      }
+    ],
+    "when": "2025-09-11T12:02:48.433Z",
+    "who": {
+      "reference": "urn:uuid:f0ea9481-ae65-4716-92c0-c255afd5818f",
+      "display": "Practitioner"
+    },
+    "sigFormat": "image/jpeg",
+    "data": "some-jpeg"
+  }
+}

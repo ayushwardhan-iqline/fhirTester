@@ -1,0 +1,208 @@
+{
+  "resourceType": "Bundle",
+  "id": "ImmunizationRecord-68c27831f1991e244ecedb79",
+  "meta": {
+    "profile": [
+      "https://nrces.in/ndhm/fhir/r4/StructureDefinition/DocumentBundle"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+        "code": "V",
+        "display": "very restricted"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://hip.in",
+    "value": "d190a29f-4d81-4428-87e2-3a783f84e02d"
+  },
+  "type": "document",
+  "timestamp": "2025-09-12T05:14:56.446Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:22bd8178-5c67-41e7-ad96-147478327cf2",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "22bd8178-5c67-41e7-ad96-147478327cf2",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ImmunizationRecord"
+          ]
+        },
+        "language": "en-IN",
+        "status": "final",
+        "type": { "text": "Immunization record" },
+        "subject": {
+          "reference": "urn:uuid:35c39c4a-9d00-41be-8e00-66b0e61c3ddb",
+          "display": "Ayush Wardhan"
+        },
+        "date": "2025-09-12T05:14:56.446Z",
+        "author": [
+          {
+            "reference": "urn:uuid:ba86dd00-03f7-4759-8bb2-2cb73e12f2f5",
+            "display": "Practitioner"
+          }
+        ],
+        "title": "Immunization record",
+        "custodian": {
+          "reference": "urn:uuid:38163fc5-cd2b-4db7-88b8-6691555ec13e",
+          "display": "Iqline"
+        },
+        "section": [
+          {
+            "title": "Immunization record",
+            "code": { "text": "Immunization record" },
+            "entry": [
+              {
+                "reference": "urn:uuid:d628e79d-ce6f-47bd-a893-b31de29d888b",
+                "type": "Immunization"
+              },
+              {
+                "reference": "urn:uuid:75e9d3c5-28af-4f13-a112-42b917907a4c",
+                "type": "ImmunizationRecommendation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d628e79d-ce6f-47bd-a893-b31de29d888b",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "d628e79d-ce6f-47bd-a893-b31de29d888b",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Immunization"
+          ]
+        },
+        "status": "completed",
+        "vaccineCode": { "text": "COVID-19" },
+        "patient": {
+          "reference": "urn:uuid:35c39c4a-9d00-41be-8e00-66b0e61c3ddb",
+          "display": "Ayush Wardhan"
+        },
+        "occurrenceDateTime": "2024-11-21",
+        "primarySource": true,
+        "lotNumber": "1"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:75e9d3c5-28af-4f13-a112-42b917907a4c",
+      "resource": {
+        "resourceType": "ImmunizationRecommendation",
+        "id": "75e9d3c5-28af-4f13-a112-42b917907a4c",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/ImmunizationRecommendation"
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:35c39c4a-9d00-41be-8e00-66b0e61c3ddb",
+          "display": "Ayush Wardhan"
+        },
+        "date": "2025-09-12T05:14:56.446Z",
+        "recommendation": [
+          {
+            "vaccineCode": [{ "text": "COVID-19" }],
+            "forecastStatus": { "text": "Due" },
+            "dateCriterion": [
+              {
+                "code": { "text": "Date vaccine due" },
+                "value": "2026-11-21T00:00:00.000Z"
+              }
+            ],
+            "supportingImmunization": [
+              {
+                "reference": "urn:uuid:d628e79d-ce6f-47bd-a893-b31de29d888b",
+                "display": "Immunization"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ba86dd00-03f7-4759-8bb2-2cb73e12f2f5",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "ba86dd00-03f7-4759-8bb2-2cb73e12f2f5",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "type": { "text": "Medical License number" },
+            "system": "https://doctor.ndhm.gov.in",
+            "value": "6772cf123687cb8eccda9fbd"
+          }
+        ],
+        "name": [{ "text": "Practitioner" }]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:35c39c4a-9d00-41be-8e00-66b0e61c3ddb",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "35c39c4a-9d00-41be-8e00-66b0e61c3ddb",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Patient"
+          ]
+        },
+        "identifier": [
+          {
+            "type": { "text": "Medical record number" },
+            "system": "https://healthid.ndhm.gov.in",
+            "value": "MOH19965"
+          }
+        ],
+        "name": [{ "text": "Ayush Wardhan" }],
+        "telecom": [
+          { "system": "phone", "value": "8506046684", "use": "home" }
+        ],
+        "gender": "male",
+        "birthDate": "2000-11-21"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:38163fc5-cd2b-4db7-88b8-6691555ec13e",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "38163fc5-cd2b-4db7-88b8-6691555ec13e",
+        "meta": {
+          "profile": [
+            "https://nrces.in/ndhm/fhir/r4/StructureDefinition/Organization"
+          ]
+        },
+        "identifier": [
+          { "system": "https://facility.ndhm.gov.in", "value": "39232493" }
+        ],
+        "name": "Iqline",
+        "telecom": [
+          { "system": "phone", "value": "+91 243 2634 1278", "use": "work" },
+          { "system": "email", "value": "info@iqline.co.in", "use": "work" }
+        ]
+      }
+    }
+  ],
+  "signature": {
+    "type": [
+      {
+        "system": "urn:iso-astm:E1762-95:2013",
+        "code": "1.2.840.10065.1.12.1.1",
+        "display": "Author's Signature"
+      }
+    ],
+    "when": "2025-09-12T05:14:56.446Z",
+    "who": {
+      "reference": "urn:uuid:ba86dd00-03f7-4759-8bb2-2cb73e12f2f5",
+      "display": "Practitioner"
+    },
+    "sigFormat": "image/jpeg",
+    "data": "some-base-64"
+  }
+}

@@ -85,7 +85,7 @@ function createTransformer(bundle: Bundle): TransformedBundle {
 
     bundle.entry?.forEach((entry: BundleEntry) => {
         if (!entry.resource) return;
-        const processed = processFhirResource(entry.resource);
+        const processed = processFhirResource(entry.resource, entry.fullUrl);
         const processedType = processed.processedType;
 
         if (!result[processedType]) {
